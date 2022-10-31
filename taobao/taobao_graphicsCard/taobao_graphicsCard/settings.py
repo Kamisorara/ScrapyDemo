@@ -12,12 +12,21 @@ BOT_NAME = 'taobao_graphicsCard'
 SPIDER_MODULES = ['taobao_graphicsCard.spiders']
 NEWSPIDER_MODULE = 'taobao_graphicsCard.spiders'
 
-DB_HOST = "192.168.31.250"
+# mysql 配置
+DB_HOST = "你数据库的地址"
 DB_PORT = 3306
 DB_USER = "root"
 DB_PASSWORD = "123456"
 DB_NAME = "scrapyTest"
 DB_CHARSET = "utf8mb4"
+
+# mangodb 配置
+MONGODB_HOST = '你数据库的地址'
+MONGODB_PORT = 27017
+MONGODB_DBNAME = 'scrapyTest'
+MONGODB_DOCNAME = 'graphics_card'
+MONGODB_USER = 'admin'
+MONGODB_PASSWD = '123456'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'taobao_graphicsCard (+http://www.yourdomain.com)'
@@ -70,7 +79,8 @@ DB_CHARSET = "utf8mb4"
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     # 'taobao_graphicsCard.pipelines.TaobaoGraphicscardPipeline': 300,
-    'taobao_graphicsCard.pipelines.mysqlPipline': 301
+    'taobao_graphicsCard.pipelines.mysqlPipline': 301,
+    'taobao_graphicsCard.pipelines.MongoPipeline': 302
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

@@ -9,7 +9,7 @@ class TaobaoSpider(scrapy.Spider):
 
     def parse(self, response):
 
-        for i in range(1, 101):
+        for i in range(1, 2):
             nextUrl = "http://search.dangdang.com/?key=Java&act=input&page_index={}".format(i)
             yield scrapy.Request(nextUrl, callback=self.parse_gc)
 
